@@ -539,29 +539,48 @@ footer p {
   margin: 5px 0;
   opacity: 0.8;
 }
-/* ===== MEDIA QUERIES ===== */
-@media (max-width: 468px) {
-  .movie {
-    width: 90%;
-  }
+/* ===== MOBILE MENU FIX ===== */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
 }
-@media (max-width: 600px) {
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
+
+.menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background: var(--text-color);
+  border-radius: 3px;
+  transition: 0.3s;
+}
+
+/* Mobile responsive nav */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
   }
+
   .nav-links {
-    flex-wrap: wrap;
-    gap: 15px;
-  }
-  .input-container {
+    display: none;
     flex-direction: column;
+    width: 100%;
+    background: var(--card-bg);
+    position: absolute;
+    top: 70px;
+    left: 0;
+    padding: 20px 0;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+    z-index: 99;
   }
-  .input-container input, .input-container button {
-    border-radius: 8px;
+
+  .nav-links.active {
+    display: flex;
   }
-  .input-container button {
-    margin-top: 10px;
+
+  .nav-links li {
+    text-align: center;
+    padding: 10px 0;
   }
 }
+
