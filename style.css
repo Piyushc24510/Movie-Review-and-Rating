@@ -527,99 +527,41 @@ footer {
   border-top: 1px solid rgba(0,0,0,0.1);
   margin-top: 40px;
 }
-
-/* ===== RESPONSIVE DESIGN ===== */
-@media (max-width: 768px) {
-  header {
-    padding: 10px 20px;
-    flex-direction: column;
-    gap: 10px;
-  }
-  
-  .header-buttons {
-    order: 3;
-    gap: 8px;
-  }
-  
-  .nav-links {
-    gap: 15px;
-    order: 2;
-  }
-  
-  .logo {
-    order: 1;
-  }
-  
-  .intro h1 {
-    font-size: 2rem;
-  }
-  
-  .input-container {
-    width: 95%;
-  }
-  
-  .wrapper {
-    gap: 10px;
-    padding: 15px;
-  }
-  
-  .button1 {
-    min-width: 100px;
-    padding: 10px 16px;
-    font-size: 0.9rem;
-  }
-  
+footer a {
+  color: var(--highlight);
+  text-decoration: none;
+  font-weight: bold;
+}
+footer a:hover {
+  text-decoration: underline;
+}
+footer p {
+  margin: 5px 0;
+  opacity: 0.8;
+}
+/* ===== MEDIA QUERIES ===== */
+@media (max-width: 468px) {
   .movie {
-    width: 180px;
-  }
-  
-  .saved-reviews-modal {
-    max-width: 95%;
-  }
-  
-  #savedMoviesContainer .movie {
-    flex-direction: column;
-    text-align: center;
-  }
-  
-  #savedMoviesContainer .movie img {
-    width: 60px;
-    height: 90px;
-    align-self: center;
+    width: 90%;
   }
 }
-
-@media (max-width: 480px) {
-  .logo {
-    font-size: 1.5rem;
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
   }
-  
   .nav-links {
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 15px;
   }
-  
-  .header-buttons {
+  .input-container {
     flex-direction: column;
-    gap: 5px;
   }
-  
-  #savedReviewsBtn, #themeToggle {
-    font-size: 0.8rem;
-    padding: 6px 12px;
+  .input-container input, .input-container button {
+    border-radius: 8px;
   }
-  
-  .wrapper {
-    flex-direction: column;
-    align-items: stretch;
-  }
-  
-  .button1 {
-    width: 100%;
-  }
-  
-  .movie {
-    width: 160px;
+  .input-container button {
+    margin-top: 10px;
   }
 }
-
