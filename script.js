@@ -504,15 +504,12 @@ document.getElementById('licenseLink').addEventListener('click', (e) => {
     <br><br>For more information, visit the project's <a href="https://github.com/Piyushc24510/remotronics" target="_blank">GitHub repository</a>.
     </p>`);
 });
-
 // ====================== EXTRA: keep UI in sync when storage changes elsewhere (if any) ======================
 window.addEventListener('storage', (e) => {
   if (e.key === STORAGE_KEY) {
     loadSavedReviewsSection();
   }
 });
-
-
 <script>
   const menuToggle = document.getElementById('menuToggle');
   const navLinks = document.getElementById('navLinks');
