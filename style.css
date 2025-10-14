@@ -1,0 +1,625 @@
+@import url("https://fonts.googleapis.com/css?family=Oswald&display=swap");
+
+body {
+  font-family: "Times New Roman", serif;
+  margin: 0;
+  background: var(--bg-color);
+  color: var(--text-color);
+  transition: background 0.4s, color 0.4s;
+}
+
+:root {
+  --bg-color: #ffffffb1;
+  --text-color: #000000;
+  --card-bg: #fff;
+  --highlight: rgb(255, 215, 0);
+}
+
+body.dark {
+  --bg-color: #121212;
+  --text-color: #fff;
+  --card-bg: #1f1f1f;
+  --highlight: #ffb400;
+}
+
+/* ===== HEADER ===== */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--card-bg);
+  padding: 15px 40px;
+  position: sticky;
+  top: 0;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  z-index: 100;
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--highlight);
+  letter-spacing: 2px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 1.1rem;
+  transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+  color: var(--highlight);
+}
+
+/* ===== HEADER BUTTONS ===== */
+.header-buttons {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+#savedReviewsBtn {
+  background: var(--highlight);
+  color: #000;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: transform 0.2s, background 0.3s;
+  font-size: 0.9rem;
+}
+
+#savedReviewsBtn:hover {
+  transform: scale(1.05);
+  background: #ffcc00;
+}
+
+#themeToggle {
+  background: var(--highlight);
+  color: #000;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: transform 0.2s;
+}
+
+#themeToggle:hover {
+  transform: scale(1.05);
+}
+
+/* ===== INTRO ===== */
+.intro {
+  text-align: center;
+  padding: 30px 10px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.intro h1 {
+  font-size: 2.5rem;
+  color: var(--highlight);
+  margin: 0 0 10px 0;
+}
+
+.intro p {
+  font-size: 1.2rem;
+  margin: 0;
+  opacity: 0.8;
+}
+
+/* ===== INPUT ===== */
+.input-container {
+  display: flex;
+  margin: 20px auto;
+  justify-content: center;
+  width: 90%;
+  max-width: 600px;
+  background: var(--card-bg);
+  padding: 0.5rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.filter-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 10px auto 20px;
+  background: var(--card-bg);
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.filter-container select {
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background: var(--bg-color);
+  color: var(--text-color);
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.input-container input {
+  flex: 1;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 8px 0 0 8px;
+  font-size: 16px;
+  background: var(--bg-color);
+  color: var(--text-color);
+  outline: none;
+}
+
+.input-container input::placeholder {
+  color: var(--text-color);
+  opacity: 0.6;
+}
+
+.input-container button {
+  padding: 0.8rem 1rem;
+  border: none;
+  border-radius: 0 8px 8px 0;
+  background: var(--highlight);
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.input-container button:hover {
+  background: #ffcc00;
+}
+
+/* ===== CATEGORY BUTTONS (WRAPPER) ===== */
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin: 30px auto;
+  padding: 20px;
+  flex-wrap: wrap;
+  max-width: 800px;
+}
+
+/* ===== FILTER SECTION (outside box) ===== */
+.filter-section {
+  text-align: center;
+  margin: 10px auto 30px;
+  padding: 15px;
+  background: none; /* transparent, outside of box look */
+}
+
+.filter-section h3 {
+  color: var(--highlight);
+  margin-bottom: 8px;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+}
+
+.filter-section select {
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: 2px solid var(--highlight);
+  background: var(--card-bg);
+  color: var(--text-color);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.filter-section select:hover {
+  transform: scale(1.05);
+  border-color: #ffcc00;
+}
+/* ===== CATEGORY BUTTONS ===== */
+
+.button1 {
+  background: var(--highlight);
+  color: #000;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+  min-width: 120px;
+}
+
+.button1:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.button1:active {
+  transform: translateY(0);
+}
+
+/* ===== MOVIE CARDS ===== */
+.results {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 15px;
+}
+
+.movie {
+  background: var(--card-bg);
+  color: var(--text-color);
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  width: 220px;
+  text-align: center;
+  padding: 10px;
+  transition: transform 0.3s;
+}
+
+.movie:hover {
+  transform: scale(1.05);
+}
+
+.movie img {
+  width: 100%;
+  height: 330px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.movie h2 {
+  font-size: 1.1rem;
+  margin: 10px 0 5px 0;
+  color: var(--text-color);
+}
+
+.movie p {
+  font-size: 0.9rem;
+  margin: 5px 0;
+  line-height: 1.4;
+}
+
+.show-more {
+  background: var(--highlight);
+  border: none;
+  padding: 5px 10px;
+  margin-top: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  transition: background 0.3s;
+}
+
+.show-more:hover {
+  background: #ffcc00;
+}
+
+/* ===== REVIEW SECTION ===== */
+.review-section {
+  margin-top: 10px;
+  padding: 10px;
+  background: var(--bg-color);
+  border-radius: 8px;
+  text-align: left;
+}
+
+.review-section h3 {
+  margin: 0 0 10px 0;
+  color: var(--highlight);
+  font-size: 1rem;
+}
+
+.stars {
+  margin: 8px 0;
+  text-align: center;
+}
+
+.star {
+  font-size: 22px;
+  color: #ccc;
+  cursor: pointer;
+  transition: color 0.2s;
+  margin: 0 2px;
+}
+
+.star:hover {
+  transform: scale(1.2);
+  color: #ffcc00;
+}
+
+.star.selected {
+  color: gold;
+  transform: scale(1.2);
+}
+
+textarea {
+  width: calc(100% - 10px);
+  min-height: 60px;
+  border-radius: 5px;
+  padding: 8px;
+  font-family: "Times New Roman", serif;
+  border: 1px solid #ccc;
+  background: var(--card-bg);
+  color: var(--text-color);
+  resize: vertical;
+  margin: 5px 0;
+}
+
+.review-section button {
+  background: var(--highlight);
+  border: none;
+  padding: 6px 12px;
+  margin: 3px 3px 0 0;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  transition: background 0.3s;
+}
+
+.review-section button:hover {
+  background: #ffcc00;
+}
+
+.saved-review {
+  margin-top: 10px;
+  padding: 8px;
+  background: var(--card-bg);
+  border-radius: 6px;
+  font-size: 0.85rem;
+}
+
+.saved-review strong {
+  color: var(--highlight);
+}
+
+/* ===== MODAL ===== */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0; 
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: var(--card-bg);
+  color: var(--text-color);
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 500px;
+  max-height: 70vh;
+  overflow-y: auto;
+  position: relative;
+  margin: 20px;
+}
+
+/* ===== SAVED REVIEWS MODAL ===== */
+.saved-reviews-modal {
+  max-width: 800px;
+  max-height: 80vh;
+}
+
+.saved-reviews-modal h2 {
+  color: var(--highlight);
+  text-align: center;
+  margin: 0 0 20px 0;
+  font-size: 1.8rem;
+}
+
+#savedMoviesContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+#savedMoviesContainer:empty::before {
+  content: "No saved reviews yet — your saved reviews will appear here.";
+  display: block;
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--text-color);
+  opacity: 0.6;
+  font-style: italic;
+}
+
+#savedMoviesContainer .movie {
+  width: 100%;
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  text-align: left;
+  padding: 15px;
+  margin: 0;
+  background: var(--bg-color);
+}
+
+#savedMoviesContainer .movie img {
+  width: 80px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+#savedMoviesContainer .movie > div {
+  flex: 1;
+}
+
+#savedMoviesContainer .movie h3 {
+  margin: 0 0 6px 0;
+  color: var(--text-color);
+}
+
+#savedMoviesContainer .movie small {
+  display: block;
+  margin-bottom: 6px;
+  opacity: 0.7;
+}
+
+#savedMoviesContainer .movie p {
+  margin: 6px 0;
+  text-align: left;
+}
+
+#savedMoviesContainer .movie button {
+  background: var(--highlight);
+  border: none;
+  padding: 6px 12px;
+  margin-right: 8px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+
+.modal-content h2 {
+  color: var(--highlight);
+  margin-top: 0;
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  cursor: pointer;
+  font-size: 24px;
+  color: var(--text-color);
+  background: none;
+  border: none;
+}
+
+.close:hover {
+  color: var(--highlight);
+}
+
+/* ===== FOOTER ===== */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: var(--card-bg);
+  font-size: 14px;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  margin-top: 40px;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+  header {
+    padding: 10px 20px;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .header-buttons {
+    order: 3;
+    gap: 8px;
+  }
+  
+  .nav-links {
+    gap: 15px;
+    order: 2;
+  }
+  
+  .logo {
+    order: 1;
+  }
+  
+  .intro h1 {
+    font-size: 2rem;
+  }
+  
+  .input-container {
+    width: 95%;
+  }
+  
+  .wrapper {
+    gap: 10px;
+    padding: 15px;
+  }
+  
+  .button1 {
+    min-width: 100px;
+    padding: 10px 16px;
+    font-size: 0.9rem;
+  }
+  
+  .movie {
+    width: 180px;
+  }
+  
+  .saved-reviews-modal {
+    max-width: 95%;
+  }
+  
+  #savedMoviesContainer .movie {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  #savedMoviesContainer .movie img {
+    width: 60px;
+    height: 90px;
+    align-self: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    font-size: 1.5rem;
+  }
+  
+  .nav-links {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .header-buttons {
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  #savedReviewsBtn, #themeToggle {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+  }
+  
+  .wrapper {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .button1 {
+    width: 100%;
+  }
+  
+  .movie {
+    width: 160px;
+  }
+}
+

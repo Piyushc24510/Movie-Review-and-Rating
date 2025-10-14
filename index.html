@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RemoFlix | Remotronics</title>
+  <link rel="icon" type="image/x-icon" href="film-reel.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- ===== Top Navigation Bar ===== -->
+  <header>
+    <div class="logo">🎬 REMOFLIX</div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#" id="aboutLink">About</a></li>
+        <li><a href="#" id="contactLink">Contact</a></li>
+        <li><a href="#" id="termsLink">Terms</a></li>
+        <li><a href="#" id="licenseLink">License</a></li>
+      </ul>
+    </nav>
+    <div class="header-buttons">
+      <button id="savedReviewsBtn">📚 Saved Reviews</button>
+      <button id="themeToggle">🌞 Light / 🌙 Dark</button>
+    </div>
+  </header>
+  <section class="intro">
+    <h1>Welcome to RemoFlix</h1>
+    <p>Your one-stop solution for movie reviews, ratings & recommendations</p>
+  </section>
+  <div class="input-container">
+    <div class="filter-container">
+  <label for="filterSelect">🎞️ Filter by:</label>
+  <select id="filterSelect">
+    <option value="all">All Movies</option>
+    <option value="action">Action</option>
+    <option value="comedy">Adventure</option>
+    <option value="animation">Animation</option>
+    <option value="horror">Comedy</option>
+    <option value="crime">Crime</option>
+    <option value="documentary">Documentary</option>
+    <option value="drama">Drama</option>
+    <option value="family">Family</option>
+    <option value="fantasy">Fantasy</option>
+    <option value="history">History</option>
+    <option value="horror">Horror</option>
+    <option value="music">Music</option>
+    <option value="mystery">Mystery</option>
+    <option value="romance">Romance</option>
+    <option value="thriller">Thriller</option>
+    <option value="war">War</option>
+    <option value="science-fiction">Science Fiction</option>
+  </select>
+</div>
+
+    <input type="text" id="searchInput" placeholder="Search for a movie...">
+    <button id="searchButton">Search</button>
+  </div>
+  <div class="wrapper">
+    <button id="nowPlayingButton" class="button1">Now Playing</button>
+    <button id="topRatedButton" class="button1">Top Rated</button>
+    <button id="upcomingButton" class="button1">Upcoming</button>
+    <button id="popularButton" class="button1">Popular</button>
+  </div>
+  <div class="results"></div>
+  <hr>
+
+  <!-- ===== Footer ===== -->
+  <footer>
+    <p>© 2025 REMOFLIX | All Rights Reserved</p>
+    <p>Developed by <a href="https://github.com/Piyushc24510">Piyush Chawla</a></p>
+  </footer>
+
+  <div id="infoModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div id="modalText"></div>
+    </div>
+  </div>
+
+  <!-- ===== Saved Reviews Modal ===== -->
+  <div id="savedReviewsModal" class="modal">
+    <div class="modal-content saved-reviews-modal">
+      <span class="close" id="savedReviewsClose">&times;</span>
+      <h2>🎥 My Saved Reviews</h2>
+      <div id="savedMoviesContainer"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
